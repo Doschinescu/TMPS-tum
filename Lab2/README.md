@@ -1,5 +1,6 @@
-**Structural Design Patterns**
-*Author: Doschinescu Dan*
+***Structural Design Patterns***
+
+**Author: Doschinescu Dan**
 
 
 *Introduction/Theory*
