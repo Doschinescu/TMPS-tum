@@ -1,0 +1,43 @@
+{
+    "users": [{
+            "user_id": 1,
+            "name": "Alice",
+            "role": "admin",
+            "email": "alice@example.com",
+            "phone": "123-456-7890"
+        },
+        {
+            "user_id": 2,
+            "name": "Bob",
+            "role": "guest",
+            "email": "bob@example.com",
+            "phone": "987-654-3210"
+        }
+    ],
+    "data_records": [{
+            "record_id": 1,
+            "raw_data": "Sensor reading A",
+            "processed_data": "Temperature: 22°C",
+            "timestamp": "2024-11-10T10:00:00"
+        },
+        {
+            "record_id": 2,
+            "raw_data": "Sensor reading B",
+            "processed_data": "Temperature: 24°C",
+            "timestamp": "2024-11-10T11:00:00"
+        }
+    ],
+    "logs": [{
+            "log_id": 1,
+            "action": "User login",
+            "details": "User Alice logged in",
+            "timestamp": "2024-11-10T09:00:00"
+        },
+        {
+            "log_id": 2,
+            "action": "Data fetch",
+            "details": "Fetched data from external service",
+            "timestamp": "2024-11-10T10:05:00"
+        }
+    ]
+}
