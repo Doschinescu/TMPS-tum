@@ -1,21 +1,13 @@
-from factories.factory import DataFetcherFactory, DataProcessorFactory, DataStorageFactory
-from models.data_models import DataRecord, DataLog
-
-class DataFacade:
+class ShoppingFacade:
     def __init__(self):
-        self.fetcher = DataFetcherFactory.create_data_fetcher()
-        self.processor = DataProcessorFactory.create_data_processor()
-        self.storage = DataStorageFactory.create_data_storage()
-        self.log = DataLog()
+        self.cart = ShoppingCart()
 
-    def fetch_process_store_data(self):
-        raw_data = self.fetcher.fetch_data()
-        processed_data = self.processor.process(raw_data)
-        record = DataRecord(raw_data=raw_data, processed_data=processed_data)
-        self.storage.save(record)
-        self.log.add_record(record)
-        
-        return record
+    def add_product(self, name, price, description=''):
+        product = Product(name, price, description=description)
+        self.cart.add_product(product)
 
-    def get_all_records(self):
-        return self.log.get_all_records()
+    def view_cart(self):
+        self.cart.display_products()
+
+    def apply_discount(self, product_name, discount):
+        self.cart.apply_discount_to_product(product_name, discount)

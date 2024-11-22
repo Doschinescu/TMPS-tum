@@ -1,4 +1,4 @@
-from data_source import DataFetcher  
+from domain.core_classes import DataFetcher  
 from utilities.adapter import DataFetcherAdapter, ExternalDataService  
 from utilities.facade import DataFacade  
 from utilities.decorator import DataFetcherLogger, CachedDataFetcher  

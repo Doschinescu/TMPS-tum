@@ -1,3 +1,5 @@
+from domain.product import Product
+
 class ExternalProductAdapter:
     def __init__(self, external_data):
         self.external_data = external_data
