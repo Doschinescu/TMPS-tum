@@ -1,12 +1,13 @@
-from domain.product import Product
+from domain.product import Product, OffProduct
 
 class ExternalProductAdapter:
-    def __init__(self, external_data):
-        self.external_data = external_data
+    def __init__(self, product, **adapted_methods):
+        self.product = product
+        self.__dict__.update(adapted_methods)
 
-    def to_product(self):
-        return Product(
-            name=self.external_data['title'],
-            price=self.external_data['cost'],
-            description=self.external_data.get('info', 'No description')
-        )
+    def __getattr__(self, attr):
+        return getattr(self.product, attr)
+
+    def original_dict(self):
+        return self.product.__dict__
+    
