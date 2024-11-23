@@ -1,10 +1,12 @@
-from command_interface import Command
+from .command_interface import Command
 
 class AddProductCommand(Command):
-    def __init__(self, cart, product):
+    def __init__(self, cart, product_name, price):
         self.cart = cart
-        self.product = product
+        self.product_name = product_name
+        self.price = price
 
     def execute(self):
-        self.cart.add_product(self.product)
-        print(f"Added {self.product} to the cart.")
+        product = {"name": self.product_name, "price": self.price}  
+        self.cart.add_product(product)
+        print(f"Added {self.product_name} (${self.price}) to the cart.")
