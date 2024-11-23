@@ -14,3 +14,6 @@ tags: []
 
 **Lab 2**
 *Structural Design Patterns*
+
+**Lab 3**
+*Behavioral Design Patterns*

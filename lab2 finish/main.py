@@ -6,7 +6,7 @@ from domain.product import Product, OffProduct
 
 def main():
     Objects = []
-    # facade = ShoppingFacade()
+    
     product1 = Product("Monitor", 100)
     Objects.append(ExternalProductAdapter(product1, types=product1.Digital))
 
@@ -15,7 +15,7 @@ def main():
 
 
     for obj in Objects:
-        print("A {0} is a {1} vehicle".format(obj.name, obj.types()))
+        print("A {0} is a {1} device".format(obj.name, obj.types()))
 
 if __name__ == "__main__":
     main()
